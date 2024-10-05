@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fade In Animation</title>
+    <style>
+        body {
+            background-color: aqua;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .number-container {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+        }
+
+        .fadeIn {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        button {
+            background-color: green;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #27ae60;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="number-container" id="numberContainer">
+            12345
+        </div>
+        <button onclick="fadeInElement()">Show Number</button>
+    </div>
+
+    <script>
+        function fadeInElement() {
+            const numberContainer = document.getElementById('numberContainer');
+            numberContainer.classList.toggle('fadeIn');
+        }
+    </script>
+</body>
+</html>
